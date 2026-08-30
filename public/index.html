@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Coin Eventos Empresariales</title>
+<meta name="description" content="Le Coin Eventos Empresariales — Eventos corporativos en San Martín: fin de año, lanzamientos, capacitaciones y aniversarios de empresa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand" id="nav-brand">
+      <img src="/img/seed/logo.png" alt="Le Coin Eventos Empresariales" class="nav-logo" id="nav-logo">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#top" data-nav-label="nav_home_label">Inicio</a></li>
+      <li><a href="#servicios" data-nav-label="nav_servicios_label">Servicios</a></li>
+      <li><a href="#instalaciones" data-nav-label="nav_instalaciones_label">Instalaciones</a></li>
+      <li><a href="#contacto" data-nav-label="nav_contacto_label" class="nav-cta">Solicitar propuesta</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-media">
+    <img id="banner-image" src="" alt="Le Coin Eventos Empresariales" class="hero-img">
+    <div class="hero-veil"></div>
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow">Eventos corporativos</p>
+    <h1 id="banner-title" class="hero-title"></h1>
+    <p id="banner-subtitle" class="hero-subtitle"></p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn btn-primary">Solicitar propuesta</a>
+      <a href="#" id="hero-whatsapp" class="btn btn-ghost-dark" target="_blank" rel="noopener" hidden>Escribinos por WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="section-inner stats-grid">
+    <div class="stat">
+      <span class="stat-number" id="stat-1-number"></span>
+      <span class="stat-label" id="stat-1-label"></span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" id="stat-2-number"></span>
+      <span class="stat-label" id="stat-2-label"></span>
+    </div>
+    <div class="stat">
+      <span class="stat-number" id="stat-3-number"></span>
+      <span class="stat-label" id="stat-3-label"></span>
+    </div>
+  </div>
+</section>
+
+<main>
+
+  <section id="servicios" class="section">
+    <div class="section-inner">
+      <div class="section-header centered">
+        <p class="kicker" id="servicios-subheading"></p>
+        <h2 class="section-title" id="servicios-heading"></h2>
+      </div>
+      <div class="servicios-list" id="servicios-list"></div>
+    </div>
+  </section>
+
+  <section id="instalaciones" class="section section-alt">
+    <div class="section-inner">
+      <div class="section-header centered">
+        <p class="kicker" id="instalaciones-subheading"></p>
+        <h2 class="section-title" id="instalaciones-heading"></h2>
+        <p class="section-text" id="instalaciones-text"></p>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="section-inner contacto-grid">
+      <div class="contacto-info">
+        <p class="kicker" id="contact-subheading"></p>
+        <h2 class="section-title" id="contact-heading"></h2>
+        <ul class="info-list">
+          <li><span class="info-label">Dirección</span><span id="contact-address"></span></li>
+          <li><span class="info-label">Teléfono</span><span id="contact-phone"></span></li>
+          <li><span class="info-label">Email</span><span id="contact-email"></span></li>
+          <li><span class="info-label">Horario</span><span id="contact-hours"></span></li>
+        </ul>
+      </div>
+
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-empresa">Empresa *</label>
+            <input type="text" id="f-empresa" name="empresa" required>
+          </div>
+          <div class="form-field">
+            <label for="f-contacto">Nombre de contacto *</label>
+            <input type="text" id="f-contacto" name="contacto" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-email">Email *</label>
+            <input type="email" id="f-email" name="email" required>
+          </div>
+          <div class="form-field">
+            <label for="f-telefono">Teléfono</label>
+            <input type="tel" id="f-telefono" name="telefono">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-tipo-evento">Tipo de evento</label>
+            <select id="f-tipo-evento" name="tipo_evento">
+              <option value="">Seleccionar...</option>
+              <option value="Fin de año">Fin de año</option>
+              <option value="Lanzamiento de producto">Lanzamiento de producto</option>
+              <option value="Capacitación / Convención">Capacitación / Convención</option>
+              <option value="Aniversario de empresa">Aniversario de empresa</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-asistentes">Cantidad de asistentes</label>
+            <input type="number" id="f-asistentes" name="cantidad_asistentes" min="1">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="f-fecha">Fecha tentativa</label>
+          <input type="date" id="f-fecha" name="fecha_evento">
+        </div>
+        <div class="form-field">
+          <label for="f-comentarios">Comentarios</label>
+          <textarea id="f-comentarios" name="comentarios" rows="4"></textarea>
+        </div>
+        <!-- Honeypot anti-spam: oculto por CSS, invisible para personas -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-website">No completar</label>
+          <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-brand" id="footer-brand"></p>
+    <p class="copyright"><span id="footer-text"></span> · <span id="footer-year"></span></p>
+  </div>
+</footer>
+
+<a href="#" id="whatsapp-float" class="whatsapp-float" target="_blank" rel="noopener" hidden aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true">
+    <path d="M16.02 3C9.4 3 4 8.36 4 15c0 2.36.68 4.56 1.86 6.42L4 29l7.77-1.83A11.9 11.9 0 0 0 16.02 27C22.63 27 28 21.64 28 15S22.63 3 16.02 3Zm6.94 16.98c-.3.85-1.72 1.63-2.38 1.7-.63.08-1.4.35-4.68-1.02-3.93-1.65-6.46-5.63-6.66-5.89-.19-.26-1.6-2.13-1.6-4.07 0-1.94.99-2.9 1.35-3.29.35-.4.77-.5 1.02-.5.26 0 .52 0 .74.01.24.02.56-.09.87.68.31.78 1.06 2.7 1.16 2.9.1.19.16.42.03.68-.13.26-.2.42-.4.65-.19.23-.41.51-.58.68-.19.19-.4.4-.17.79.23.4 1.02 1.72 2.2 2.79 1.51 1.38 2.78 1.81 3.17 2.01.4.19.63.16.87-.1.24-.26 1-1.19 1.27-1.6.26-.4.52-.33.87-.19.34.13 2.2 1.06 2.57 1.25.38.19.63.29.72.45.1.16.1.94-.2 1.8Z"/>
+  </svg>
+</a>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Anterior">&#8249;</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Siguiente">&#8250;</button>
+</div>
+
+<script src="/js/config.js?v=1"></script>
+<script src="/js/main.js?v=1"></script>
+</body>
+</html>
