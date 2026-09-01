@@ -1,11 +1,13 @@
 // Ruta pública: recibe la solicitud de cotización de evento corporativo. A diferencia
 // de un formulario de contacto genérico, pide los datos que hacen falta para calificar
-// un lead de evento de empresa (tipo de evento, cantidad de asistentes, fecha) - no
-// envía email, se guarda para verse desde el panel (pestaña "Consultas").
+// un lead de evento de empresa (tipo de evento, cantidad de asistentes, fecha). Se
+// guarda para verse desde el panel (pestaña "Consultas") y avisa por email (ver
+// server/email.js - si no está configurado, simplemente no manda el aviso).
 
 const express = require('express');
 const db = require('../db');
 const asyncHandler = require('../asyncHandler');
+const notifier = require('../email');
 
 const router = express.Router();
 
@@ -65,6 +67,20 @@ router.post('/', asyncHandler(async (req, res) => {
     created_at: new Date(),
     is_read: false
   });
+
+  await notifier.notify(
+    `Nueva consulta corporativa de ${empresa.trim()}`,
+    notifier.renderFields([
+      ['Empresa', empresa.trim()],
+      ['Contacto', contacto.trim()],
+      ['Email', email.trim()],
+      ['Teléfono', telefono],
+      ['Tipo de evento', tipo_evento],
+      ['Cantidad de asistentes', asistentes],
+      ['Fecha tentativa', fecha_evento],
+      ['Comentarios', comentarios]
+    ])
+  );
 
   res.json({ ok: true });
 }));
